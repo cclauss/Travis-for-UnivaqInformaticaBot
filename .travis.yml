@@ -2,9 +2,11 @@ sudo: false
 dist: trusty
 language: python
 python:
-    - 3.6.1
+    - 3.6.1  # This should match with runtime.txt
 before_install:
-    - git clone --depth=50 --branch=master https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot ~/Pokemon-Terminal
+    - git clone --depth=50 --branch=master https://github.com/UnivaqTelegramBot/UnivaqInformaticaBot ~/UnivaqInformaticaBot
+    - cp *.py ~/UnivaqInformaticaBot  # copy local pytest scripts into ~/UnivaqInformaticaBot
+    - cd ~/UnivaqInformaticaBot
 install:
     - pip install flake8 pytest
 before_script:
